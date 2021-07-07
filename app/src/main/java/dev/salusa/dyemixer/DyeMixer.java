@@ -1,3 +1,8 @@
+// Adapted from http://yehar.com/blog/wp-content/uploads/2006/08/DyeMixer.zip
+// This code was released to the public domain by the author on 2020-02-20
+// http://yehar.com/blog/?p=307#comment-1256021
+package dev.salusa.dyemixer;
+
 import java.applet.Applet;
 
 import java.util.Vector;
@@ -231,9 +236,6 @@ public class DyeMixer extends Applet {
                     int width = g.getFontMetrics().stringWidth(info);
                     int height = g.getFontMetrics().getAscent()-g.getFontMetrics().getDescent();
                     g.drawString(info, (int)((getSize().width-width)/2), (int)((getSize().height+height)/2));
-                    if (light != null) {
-                        spectrax =
-                    }
                 }
             }
         }
@@ -254,7 +256,6 @@ public class DyeMixer extends Applet {
         public void setColor(Color color) {
             this.color = color;
             cieknown = false;
-            spectrum = null;
             repaint();
         }
 
@@ -264,7 +265,6 @@ public class DyeMixer extends Applet {
             ciex = xy[0];
             ciey = xy[1];
             cieknown = true;
-            spectrum = light.getPowerSpectrum();
             repaint();
         }
 
