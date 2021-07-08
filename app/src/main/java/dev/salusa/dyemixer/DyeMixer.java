@@ -42,7 +42,7 @@ import java.awt.event.TextListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class DyeMixer extends Applet {
+public class DyeMixer extends Panel {
 
     boolean failed = false;
 
@@ -1422,7 +1422,7 @@ public class DyeMixer extends Applet {
     DyeSliderListener[] listen_dyesliders = new DyeSliderListener[nummixeddyes];
     DyeAmountListener[] listen_dyeamounts = new DyeAmountListener[nummixeddyes];
 
-    public void init() {
+    public DyeMixer() {
         GridBagConstraints c;
         GridBagLayout l;
 

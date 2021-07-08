@@ -6,10 +6,14 @@
  * User Manual available at https://docs.gradle.org/7.1.1/userguide/building_java_projects.html
  */
 
+//mainClass = 'SalusaDyeMixer.App'
+
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
-    application
+    id 'application'
 }
+
+def main_class = 'dev.salusa.dyemixer.App'
 
 java {
     toolchain {
@@ -28,7 +32,15 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
 }
 
+jar {
+    manifest {
+        attributes(
+        'Main-Class': main_class
+        )
+    }
+}
+
 application {
     // Define the main class for the application.
-    mainClass.set("SalusaDyeMixer.App")
+    mainClass.set(main_class)
 }
