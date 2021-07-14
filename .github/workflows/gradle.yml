@@ -15,12 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: |
+        download_url="https://corretto.aws/downloads/latest/amazon-corretto-16-x64-linux-jdk.tar.gz"
+        wget -O $RUNNER_TEMP/java_package.tar.gz $download_url
     - uses: actions/checkout@v2
-    - name: Set up JDK 15
+    - name: Set up JDK
       uses: actions/setup-java@v2
       with:
-        java-version: '15'
-        distribution: 'adopt'
+        java-version: '16'
+        distribution: 'jdkfile'
+        jdkFile: ${{ runner.temp }}/java_package.tar.gz
+        architecture: x64
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
