@@ -55,12 +55,13 @@ task jpackage {
 
     doLast {
         exec {
+            workingDir buildDir
             executable "${toolchain_home}/bin/jpackage"
             args '--add-modules', 'java.base,java.desktop'
             args '--main-jar', jar_name
             args '--input', jar_dir
             args '--main-class', main_class
-            args '--dest', "'${buildDir}/distributions'"
+            args '--dest', "distributions"
         }
     }
 //    args '--install-dir', 'SalusaDyeMixer'
