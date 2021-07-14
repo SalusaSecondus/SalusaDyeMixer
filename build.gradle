@@ -62,6 +62,9 @@ task jpackage {
             args '--input', jar_dir
             args '--main-class', main_class
             args '--dest', "distributions"
+            args '--name', "SalusaDyeMixer"
+            args '--description', 'A non-applet version of DyeMixer from http://yehar.com/blog/?p=307'
+            args '--app-version', '1.0b1.1'
         }
     }
 //    args '--install-dir', 'SalusaDyeMixer'
