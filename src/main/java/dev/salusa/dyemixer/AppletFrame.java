@@ -8,7 +8,7 @@ public class AppletFrame extends Frame {
     public AppletFrame() {
         DyeMixer mixer = new DyeMixer();
         setSize(564, 414);
-        setTitle("DyeMixer (SalusaSecondus version 1.0, Base version 1.1)");
+        setTitle("DyeMixer v2.1.1 (Base version 1.1)");
         setLayout(new GridLayout(1,1));
         add(mixer);
         addWindowListener(new Listener());
