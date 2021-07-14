@@ -6,21 +6,22 @@
  * User Manual available at https://docs.gradle.org/7.1.1/userguide/building_java_projects.html
  */
 
-//mainClass = 'SalusaDyeMixer.App'
-
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
 }
 
 def main_class = 'dev.salusa.dyemixer.App'
-
+def java_version = 15;
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
+        languageVersion.set(JavaLanguageVersion.of(java_version))
     }
 }
 
+def toolchain_home = javaToolchains.compilerFor {
+    languageVersion = JavaLanguageVersion.of(java_version)
+}.get().metadata.installationPath.asFile.absolutePath
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -43,4 +44,24 @@ jar {
 application {
     // Define the main class for the application.
     mainClass.set(main_class)
+}
+
+task jpackage {
+    dependsOn jar
+
+    def jar_file = tasks.named('jar').get().outputs.getFiles().getSingleFile();
+    def jar_dir = jar_file.getParent();
+    def jar_name = jar_file.getName();
+
+    doLast {
+        exec {
+            executable "${toolchain_home}/bin/jpackage"
+            args '--add-modules', 'java.base,java.desktop'
+            args '--main-jar', jar_name
+            args '--input', jar_dir
+            args '--main-class', main_class
+            args '--dest', "'${buildDir}/distributions'"
+        }
+    }
+//    args '--install-dir', 'SalusaDyeMixer'
 }

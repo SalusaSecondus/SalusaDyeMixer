@@ -8,4 +8,4 @@
  */
 
 rootProject.name = "SalusaDyeMixer"
-include("app")
+//include("app")

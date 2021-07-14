@@ -3,8 +3,6 @@
  */
 package dev.salusa.dyemixer;
 
-import dev.salusa.dyemixer.AppletFrame;
-
 public class App {
     public static void main(String[] args) {
         final AppletFrame frame = new AppletFrame();
