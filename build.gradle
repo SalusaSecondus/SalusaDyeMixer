@@ -12,15 +12,14 @@ plugins {
 }
 
 def main_class = 'dev.salusa.dyemixer.App'
-def java_version = 15;
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(java_version))
+        languageVersion.set(JavaLanguageVersion.of(11))
     }
 }
 
-def toolchain_home = javaToolchains.compilerFor {
-    languageVersion = JavaLanguageVersion.of(java_version)
+def jpackage_home = javaToolchains.compilerFor {
+    languageVersion = JavaLanguageVersion.of(15)
 }.get().metadata.installationPath.asFile.absolutePath
 
 repositories {
@@ -56,7 +55,7 @@ task jpackage {
     doLast {
         exec {
             workingDir buildDir
-            executable "${toolchain_home}/bin/jpackage"
+            executable "${jpackage_home}/bin/jpackage"
             args '--add-modules', 'java.base,java.desktop'
             args '--main-jar', jar_name
             args '--input', jar_dir
