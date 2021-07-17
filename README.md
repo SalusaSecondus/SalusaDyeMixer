@@ -10,7 +10,7 @@ This way dyers can still use it without needing to worry about Java support in t
 ## How to download and use
 
 There are a few ways to do this depending on how your computer is setup and how you want to manage things.
-In all cases you start by going to the [releases](https://github.com/SalusaSecondus/SalusaDyeMixer/releases) page of this repo.
+In all cases you start by going to the [latest release](https://github.com/SalusaSecondus/SalusaDyeMixer/releases/latest) page of this repo.
 
 ### You already have Java 11 (or newer) installed (universal)
 
