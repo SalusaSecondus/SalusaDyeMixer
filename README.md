@@ -32,7 +32,7 @@ This should "just work" but I can't fully describe the installation procedure as
 
 1. Download your system's correct installation file
    * Windows: Download the `.exe`
-   * Mac: Download the `.dmg`
+   * Mac: Download the `.dmg` **(This appears to be broken right now and I need assistance from a Java dev to fix it.)**
    * Linux: I only have a `.deb` available for now, but if you are running Linux, you can figure this out yourself.
 2. Follow the instructions on the screen
 3. Run the program from whereever it is installed:
