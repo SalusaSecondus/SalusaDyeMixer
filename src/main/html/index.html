@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>Salusa's Dye Mixer</title>
-    </head>
 <!-- Adapted from http://yehar.com/blog/?p=307#comment-1256021 by SalusaSecondus -->
 <!-- They adapted it from http://yehar.com/blog/wp-content/uploads/2006/08/DyeMixer.zip -->
 <!-- This code is in the -->
@@ -2821,8 +2820,8 @@
 }
 
 </script>
-<script src="data.js"></script>
-<body onload="initAllElements()">
+</head>
+<body onload="initAllElements()" style="background-color: lightgray;">
     <h1>Dye Mixer</h1>
     <div id="lightSection">
         Illuminant <input type="checkbox" id="illuminant_WhiteAdapt" onchange="updateSwatches()">White
@@ -2847,8 +2846,16 @@
         </div>
     </div>
     <hr>
-    <p>This code is adapted from the Java Applet originally hosted at <a href="https://yehar.com/blog/?p=307#comment-1256021">https://yehar.com/blog/?p=307#comment-1256021</a>.
-    It was released to the public domain. In an effort to preseve it I hand translated it into Javascript and am hosting it here (also under the public domain).</p>
+    <p>This code is adapted from the Java Applet originally hosted at <a href="https://yehar.com/blog/?p=307#comment-1256021">https://yehar.com/blog/?p=307#comment-1256021</a> by <a href="https://github.com/SalusaSecondus">SalusaSecondus</a>.
+        I am <em>not</em> a dyer and did this as a favor to a friend.
+        The original version was released to the public domin.
+        In an effort to preseve it, I <a href="https://github.com/SalusaSecondus/SalusaDyeMixer/tree/main/src/main/html">hand translated it into HTML and Javascript</a> and am hosting it here (also under the public domain).
+        This webpage is entirely self-contained and may be downloaded to your local machine or rehosted elsewhere.
+    </p>
+    <p>
+        I intend to make minor usability tweaks as I find them, but I'm not a web developer or someone who generally builds user interfaces.
+        Since this is hosted in a <a href="https://github.com/SalusaSecondus/SalusaDyeMixer">GitHub repository</a>, I encourage people to submit Pull Requests or Issues to improve this.
+    </p>
 
     <p>To aid in use, I am duplicating the application description below from the original author.</p>
     <hr>
